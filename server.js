@@ -1,4 +1,5 @@
 const express = require('express');
+const publisher = require('./publisher');
 
 const app = express();
 app.use(express.json());
@@ -8,6 +9,7 @@ app.post('/trigger', (req, res) => {
 
 	//make a post req to an endpoint in other microservices
 	var request = require('request');
+
 	request.post(
     'https://codeway-305121.uc.r.appspot.com/logs',
     { json: { key: 'value' } },
@@ -16,7 +18,9 @@ app.post('/trigger', (req, res) => {
             console.log(body);
         }
     }
-);
+    );
+
+    publisher.publishMessage();
 
 	res.sendStatus(200);
 });
