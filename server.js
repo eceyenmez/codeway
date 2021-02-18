@@ -4,12 +4,12 @@ const app = express();
 app.use(express.json());
 
 app.post('/trigger', (req, res) => {
-	console.log("wtf")
+	console.log("hello lokisan")
 
 	//make a post req to an endpoint in other microservices
 	var request = require('request');
 	request.post(
-    'http://localhost:5000/logs',
+    'https://codeway-305121.uc.r.appspot.com/logs',
     { json: { key: 'value' } },
     function (error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -34,4 +34,4 @@ app.post('/logs', (req, res) => {
 
 
 
-app.listen(5000,console.log("server started listening on port 5000"));
+app.listen(8080,console.log("server started listening on port 8080"));
