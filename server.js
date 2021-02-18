@@ -1,5 +1,5 @@
 const express = require('express');
-const publisher = require('./publisher');
+const publisher = require('./publisher.js');
 
 const app = express();
 app.use(express.json());

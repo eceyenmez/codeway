@@ -33,3 +33,6 @@ async function publishMessage() {
     process.exitCode = 1;
   }
 }
+
+
+module.exports = { publishMessage };
