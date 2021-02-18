@@ -15,12 +15,10 @@ app.post('/trigger', (req, res) => {
     { json: { key: 'value' } },
     function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            console.log(body);
+            publisher.publishMessage(body);
         }
     }
     );
-
-    publisher.publishMessage();
 
 	res.sendStatus(200);
 });
