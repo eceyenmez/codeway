@@ -15,7 +15,9 @@ async function publishMessage(body) {
   try {
 
   	for(const log in body){
+  		console.log(body[log]);
   		const data = JSON.stringify(log);
+  		console.log(data);
         const dataBuffer = Buffer.from(data);
         const messageId = await pubSubClient.topic(topicName).publish(dataBuffer);
         console.log(`Message ${messageId} published.`);
