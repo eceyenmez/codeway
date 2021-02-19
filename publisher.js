@@ -12,6 +12,10 @@ const pubSubClient = new PubSub();
 async function publishMessage(body) {
   // Publishes the message as a string, e.g. "Hello, world!" or JSON.stringify(someObject)
   const data = JSON.stringify(body);
+  console.log("debug");
+  console.log(body);
+  console.log("end");
+  console.log(data);
 
   const dataBuffer = Buffer.from(data);
 
