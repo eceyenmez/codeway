@@ -7,8 +7,6 @@ const app = express();
 app.use(express.json());
 
 app.post('/trigger', (req, res) => {
-	console.log("hello lokisan")
-
 	//make a post req to an endpoint in other microservices
 	var request = require('request');
 
@@ -27,7 +25,6 @@ app.post('/trigger', (req, res) => {
 
 //simulates other microservices
 app.post('/logs', (req, res) => {
-	console.log("hello lanana");
 
 	var fs = require('fs');
 	var obj = JSON.parse(fs.readFileSync('dummyEvents.json', 'utf8'));
@@ -37,10 +34,8 @@ app.post('/logs', (req, res) => {
 
 
 app.get('/dau', (req, res) => {
-	console.log("hello midyesu");
 	
 	dataset.queryDAU().then(result => { 
-		console.log("eceeee2345: "+result);
 		res.status(200).json(JSON.parse(result));
 
 	});
@@ -48,10 +43,8 @@ app.get('/dau', (req, res) => {
 });
 
 app.get('/totalUserNumber', (req, res) => {
-	console.log("hello jagujagu");
 	
 	dataset.queryTotalUserNumber().then(result => { 
-		console.log("eceeee: "+result);
 		res.status(200).json(JSON.parse(result));
 
 	});
@@ -59,10 +52,8 @@ app.get('/totalUserNumber', (req, res) => {
 });
 
 app.get('/queryDailyAverageDurations', (req, res) => {
-	console.log("hello hossiksu");
 	
 	dataset.queryDailyAverageDurations().then(result => { 
-		console.log("eceeee: "+result);
 		res.status(200).json(JSON.parse(result));
 
 	});
