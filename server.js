@@ -1,5 +1,7 @@
 const express = require('express');
-const publisher = require('./publisher.js');
+const publisher = require('./publisherController.js');
+const dataset = require('./datasetController.js');
+
 
 const app = express();
 app.use(express.json());
@@ -31,6 +33,40 @@ app.post('/logs', (req, res) => {
 	var obj = JSON.parse(fs.readFileSync('dummyEvents.json', 'utf8'));
 
 	res.status(200).json(obj);
+});
+
+
+app.get('/dau', (req, res) => {
+	console.log("hello midyesu");
+	
+	dataset.queryDAU().then(result => { 
+		console.log("eceeee2345: "+result);
+		res.status(200).json(JSON.parse(result));
+
+	});
+
+});
+
+app.get('/totalUserNumber', (req, res) => {
+	console.log("hello jagujagu");
+	
+	dataset.queryTotalUserNumber().then(result => { 
+		console.log("eceeee: "+result);
+		res.status(200).json(JSON.parse(result));
+
+	});
+
+});
+
+app.get('/queryDailyAverageDurations', (req, res) => {
+	console.log("hello hossiksu");
+	
+	dataset.queryDailyAverageDurations().then(result => { 
+		console.log("eceeee: "+result);
+		res.status(200).json(JSON.parse(result));
+
+	});
+
 });
 
 
