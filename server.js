@@ -1,6 +1,6 @@
 const express = require('express');
-const publisher = require('./publisherController.js');
-const dataset = require('./datasetController.js');
+const publisher = require('./publisherService.js');
+const dataset = require('./datasetService.js');
 
 
 const app = express();
