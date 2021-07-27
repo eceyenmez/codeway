@@ -1,7 +1,7 @@
 /**
  * TODO(developer): Uncomment these variables before running the sample.
  */
- const topicName = 'projects/codeway-305121/topics/codeway';
+ const topicName = 'projects/test-305121/topics/codeway';
 
 // Imports the Google Cloud client library
 const {PubSub} = require('@google-cloud/pubsub');
