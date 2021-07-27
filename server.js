@@ -11,7 +11,7 @@ app.post('/trigger', (req, res) => {
 	var request = require('request');
 
 	request.post(
-    'https://codeway-305121.uc.r.appspot.com/logs',
+    'https://test-305121.uc.r.appspot.com/logs',
     { json: { key: 'value' } },
     function (error, response, body) {
         if (!error && response.statusCode == 200) {
