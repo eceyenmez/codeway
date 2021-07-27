@@ -7,7 +7,7 @@ async function queryTotalUserNumber() {
   const bigqueryClient = new BigQuery();
 
   // The SQL query to run
-  const sqlQuery = "SELECT * FROM `codeway-305121.codeway.total_user_number` order by date desc LIMIT 1";
+  const sqlQuery = "SELECT * FROM `codeway-305121.test.total_user_number` order by date desc LIMIT 1";
 
   const options = {
     query: sqlQuery,
@@ -30,7 +30,7 @@ async function queryDAU() {
   const bigqueryClient = new BigQuery();
 
   // The SQL query to run
-  const sqlQuery = "SELECT * FROM `codeway-305121.codeway.DAU`";
+  const sqlQuery = "SELECT * FROM `test-305121.codeway.DAU`";
 
   const options = {
     query: sqlQuery,
@@ -53,7 +53,7 @@ async function queryDailyAverageDurations() {
   const bigqueryClient = new BigQuery();
 
   // The SQL query to run
-  const sqlQuery = "SELECT * FROM `codeway-305121.codeway.daily_avg_session_time`";
+  const sqlQuery = "SELECT * FROM `test-305121.codeway.daily_avg_session_time`";
 
   const options = {
     query: sqlQuery,
