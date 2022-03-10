@@ -30,7 +30,7 @@ async function queryDAU() {
   const bigqueryClient = new BigQuery();
 
   // The SQL query to run
-  const sqlQuery = "SELECT * FROM `test-305121.codeway.DAU`";
+  const sqlQuery = "SELECT * FROM `test-305121.DAU`";
 
   const options = {
     query: sqlQuery,
